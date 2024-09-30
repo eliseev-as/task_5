@@ -8,11 +8,11 @@
 
 class Node {
 public:
-    int data;
+    int value;
     Node *next;
 
-    explicit Node(const int data) {
-        this->data = data;
+    explicit Node(const int value) {
+        this->value = value;
         this->next = nullptr;
     }
 };
