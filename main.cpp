@@ -4,20 +4,22 @@
 
 int main() {
     LinkedList list;
+    constexpr int count = 10;
 
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(1, 100);
 
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 0; i < count; i++) {
         list.add(distrib(gen));
     }
 
-    std::cout << "Список до сортировки";
-    for (int i = 1; i <= 10; i++) {
+    std::cout << "Список до сортировки:" << std::endl;
+    for (int i = 0; i < count; i++) {
         std::cout << list.get(i) << ' ';
     }
-
+    std::cout << std::endl << std::string(list.get_size() * 3, '-') << std::endl;
+    std::cout << "Список после сортировки:" << std::endl;
 
     return 0;
 }
