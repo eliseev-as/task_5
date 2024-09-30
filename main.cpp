@@ -19,7 +19,12 @@ int main() {
         std::cout << list.get(i) << ' ';
     }
     std::cout << std::endl << std::string(list.get_size() * 3, '-') << std::endl;
+
     std::cout << "Список после сортировки:" << std::endl;
+    list.insertion_sort();
+    for (int i = 0; i < count; i++) {
+        std::cout << list.get(i) << ' ';
+    }
 
     return 0;
 }

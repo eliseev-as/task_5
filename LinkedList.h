@@ -51,6 +51,32 @@ public:
     [[nodiscard]] int get_size() const {
         return size;
     }
+
+    void insertion_sort() {
+        Node *current = head;
+        Node *result = nullptr;
+
+        while (current != nullptr) {
+            Node *next = current->next;
+
+            if (result == nullptr || current->value <= result->value) {
+                current->next = result;
+                result = current;
+            } else {
+                Node *temp = result;
+                while (temp->next != nullptr && current->value > temp->next->value) {
+                    temp = temp->next;
+                }
+
+                current->next = temp->next;
+                temp->next = current;
+            }
+
+            current = next;
+        }
+
+        head = result;
+    }
 };
 
 
